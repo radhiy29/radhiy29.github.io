@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Homepage</title>
+
+   <!--=============== CSS ===============-->
+   <link rel="stylesheet" href="assets/css/styles.css">
+   <link rel="stylesheet" href="assets/css/background-stars.css">
+
+   <!--=============== EFFECT STARS ===============-->
+   <div id='stars'></div>
+   <div id='stars2'></div>
+   <div id='stars3'></div>
+
+   <!-- JAVASCRIPT -->
+   <script src="assets/js/header.js"></script>
+   <script src="assets/js/username.js"></script>
+   <script src="assets/js/logout.js"></script>
+
+
+   <style>
+      * {
+         margin: 0;
+         padding: 0;
+      }
+
+      body {
+         overflow-x: hidden;
+         background: black;
+      }
+
+      .earth {
+         margin-top: 175px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         scale: 1.4;
+      }
+
+      .rocket {
+         left: 280px;
+         top: 120px;
+         position: absolute;
+         scale: 1.1;
+         display: flex;
+         transform: rotate(25deg);
+      }
+
+      .text-earth {
+         font-family: Roboto, sans-serif;
+         color: white;
+         display: flex;
+         justify-content: center;
+         flex-direction: column;
+         align-items: center;
+         scale: 2.5;
+         text-shadow: 0px 0px 10px white;
+         animation: change 1s ease-in-out infinite;
+      }
+
+      /* EFFECT ALAY */
+      /* @keyframes change {
+         0% {
+            text-shadow: 0px 0px 10px white;
+         }
+
+         33% {
+            text-shadow: 0px 0px 10px black;
+         }
+
+         66% {
+            text-shadow: 0px 0px 10px white;
+         }
+
+         100% {
+            text-shadow: 0px 0px 10px black;
+         }
+
+      } */
+
+      .text-earth-container {
+         width: 100%;
+         height: 700px;
+         position: absolute;
+         top: 30px;
+         left: 0;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+      }
+
+      body {
+         font-family: Arial, sans-serif;
+         margin: 20px;
+      }
+
+      .container-article {
+         display: flex;
+         justify-content: space-around;
+         flex-wrap: wrap;
+         margin-top: 120px;
+         padding: 10px;
+      }
+
+      .article {
+         width: 43%;
+         padding: 25px;
+         margin-top: 50px;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         border-radius: 10px;
+         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+         margin-bottom: 20px;
+         background-color: rgba(255, 255, 255, 0.8);
+      }
+
+      .article h2 {
+         text-align: center;
+         font-size: 24px;
+         margin-bottom: 10px;
+         color: #333;
+      }
+
+      .article p {
+         text-align: justify;
+         color: #666;
+      }
+
+      .pindah-artikel {
+         margin-top: 10px;
+         text-align: end;
+         float: right;
+         font: bold;
+      }
+
+      .pindah-artikel a {
+         color: #666;
+         text-decoration: underline;
+      }
+   </style>
+</head>
+
+<body>
+   <script>
+      document.addEventListener('DOMContentLoaded', function () {
+         tampilkanPesanSelamat();
+      });
+   </script>
+
+   <script>
+      document.addEventListener('DOMContentLoaded', function () {
+         logout();
+      });
+   </script>
+
+   <div class="earth">
+      <img src="assets/Photo/bumi.png" alt="foto-bumi" width="400" />
+      <img src="assets/Photo/rocket.png" class="rocket" alt="foto-roket" width="150" />
+   </div>
+
+   <div class="text-earth-container">
+      <div class="text-earth text-animate">
+         <h1>THE ART OF</h1>
+         <h1>SEEING BEYOND</h1>
+      </div>
+   </div>
+
+   <div class="container-article">
+      <div class="article">
+         <h2>Bagaimana Planet-Planet Terbentuk?</h2>
+         <p>
+            &nbsp; Ketika berbicara tentang planet, kamu mungkin berpikir tentang planet-planet di tata surya
+            kita, yaitu planet yang mengorbit (mengelilingi) matahari. Ada delapan di antaranya. Salah satunya adalah
+            tempat kamu dan saya tinggal: Bumi. Yang lainnya adalah Merkurius, Venus, Mars, Jupiter, Saturnus,
+            Uranus, dan Neptunus.
+         </p>
+
+         <div class="pindah-artikel">
+            <a href="BAGIAN ARTIKEL/artikel1.html">Selengkapnya....</a>
+         </div>
+      </div>
+
+      <div class="article">
+         <h2>Pengertian Galaksi, Ciri, Jenis dan Teori Terbentuknya</h2>
+         <p>
+            &nbsp; Galaksi adalah sebuah sistem bintang dengan ukuran yang sangat besar, susunan terdiri dari
+            bintang-bintang dan jumlahnya tak terhitung. Bintang-bintang yang ada juga terdapat beberapa jenis, bisa
+            berupa bintang hingga gugus bintang. Selain itu juga terdapat planet, cluster, asteroid, nebula, komet
+            hingga debu-debu kosmik dan gas, apa nama galaksi yang ditempati makhluk hidup?.
+         </p>
+
+         <div class="pindah-artikel">
+            <a href="BAGIAN ARTIKEL/artikel2.html">Selengkapnya....</a>
+         </div>
+      </div>
+
+      <div class="article">
+         <h2>Bagaimana Asal Usul Penamaan Bumi?</h2>
+         <p>
+            &nbsp; Pernahkah Anda bertanya-bertanya darimana penamaan planet tempat tinggal kita, Bumi?
+            Rupanya bumi memiliki kisah asal yang jauh di dalam sejarah. Seperti banyak nama objek tata surya, nama
+            asli Bumi sudah lama hilang dari sejarah. Namun pendekatan ilmu linguistik memberikan beberapa
+            petunjuk.
+         </p>
+
+         <div class="pindah-artikel">
+            <a href="BAGIAN ARTIKEL/artikel3.html">Selengkapnya....</a>
+         </div>
+      </div>
+
+      <div class="article">
+         <h2>Bisakah Manusia Bertahan Hidup Jangka Panjang di Luar Angkasa?</h2>
+         <p>
+            &nbsp; Sepertinya telah menjadi asumsi yang dapat diterima bahwa migrasi manusia ke luar angkasa
+            tidak dapat dihindari. Tapi apakah ini asumsi yang valid? Apakah itu berdasarkan fakta, atau berdasarkan
+            kepercayaan pada keistimewaan manusia? Manusia adalah migran. Buktinya jelas, manusia tersebar di seluruh
+            Bumi. Apakah ada sesuatu tentang manusia yang menunjukkan bahwa bermigrasi ke luar angkasa tidak jauh
+            berbeda dengan bermigrasi dari Afrika ke Eurasia?.
+         </p>
+
+         <div class="pindah-artikel">
+            <a href="BAGIAN ARTIKEL/artikel4.html">Selengkapnya....</a>
+         </div>
+      </div>
+   </div>
+
+   <div class="contact">
+      <a title="User Guide" href="userguide.html">
+         <img width="50px" src="assets/Element/userguide.png"></img>
+      </a>
+   </div>
+
+</body>
+
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo of the Day (NASA)</title>
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/background-stars.css">
+
+    <!--=============== EFFECT STARS ===============-->
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
+
+    <!-- CALLING HEADER BAR FROM JAVASCRIPT -->
+    <script src="assets/js/header.js"></script>
+    <script src="assets/js/bloklink.js"></script>
+    <script src="assets/js/username.js"></script>
+
+    <style>
+        body {
+            background: black;
+        }
+
+        .judul {
+            display: flex;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+            font-size: 34px;
+            color: wheat;
+        }
+
+        .deskripsi {
+            display: flex;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            font-size: 20px;
+        }
+
+        .image-container {
+            z-index: 99;
+            box-shadow: 0 0 20px whitesmoke;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            tampilkanPesanSelamat();
+        });
+    </script>
+
+    <div>
+        <h1>ASTROVERSE</h1>
+        <div style="padding: 75px">
+            <div class="judul" id="title"></div>
+            <div id="media" style="padding: 35px; display: flex; justify-content: center;">
+                <!-- <img class="image-container" id="gambar" width="40%" align="center"> -->
+            </div>
+            <p class="deskripsi" id="deskripsi" style="text-align: justify; padding: 20px;">
+            </p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const apiKey = 'KHnzYZGJCjlBm7xI8JU6fb5JiRoHu34M7YjpzWYw';
+            const apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`;
+
+            fetch(apiUrl)
+                .then(response => {
+                    if (response.ok) {
+                        return response.json();
+                    } else {
+                        throw new Error(`Request failed with status: ${response.status}`);
+                    }
+                })
+                .then(data => {
+                    console.log(data)
+                    const media = document.getElementById('media');
+                    const deskripsi = document.getElementById('deskripsi');
+                    const titleAPOD = document.getElementById('title');
+
+                    const mediaUrl = data.url;
+                    const media_type = data.media_type;
+                    if (media_type === 'video') {
+                        media.innerHTML = `<iframe width="640" height="360" src="${mediaUrl}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="image-container" ></iframe>`;
+                    } else {
+                        media.innerHTML = `<img class="image-container" id="gambar" width="40%" align="center" src="${mediaUrl}" >`;
+                    }
+                    const title = data.title;
+                    const explanation = data.explanation;
+
+                    deskripsi.textContent = explanation;
+                    titleAPOD.textContent = title;
+                })
+                .catch(error => {
+                    console.error(error);
+                });
+
+            const baseUrl = 'https://epic.gsfc.nasa.gov/archive/natural/';
+
+            $.ajax({
+                url: 'https://epic.gsfc.nasa.gov/api/natural',
+                dataType: 'json',
+                success: function (data, status, xhr) {
+                    // Access the image URLs in the JSON response
+                    const imageUrls = data.map(item => item.image);
+
+                    // Now 'imageUrls' is an array containing the URLs of the images
+                    // gambar.src = baseUrl + imageUrls[0] + '.png';
+                    console.log(imageUrls[2])
+                },
+                error: function (xhr, status, error) {
+                    console.error(error);
+                }
+            });
+        });
+    </script>
+
+    <div class="contact">
+        <a title="User Guide" href="userguide.html"><img width="50px" src="/assets/Element/userguide.png"></img></a>
+    </div>
+
+    <!--============== MENU FOR MOBILE DEVICES JS ===============-->
+    <!-- <script src="assets/js/main.js"></script> -->
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Astronomy Quiz (Easy)</title>
+
+   <!--=============== CSS ===============-->
+   <link rel="stylesheet" href="assets/css/styles.css">
+   <link rel="stylesheet" href="assets/css/background-stars.css">
+   <link rel="stylesheet" href="quiz/quiz.css">
+
+   <!--=============== EFFECT STARS ===============-->
+   <div id='stars'></div>
+   <div id='stars2'></div>
+   <div id='stars3'></div>
+
+   <!-- CALLING HEADER BAR FROM JAVASCRIPT -->
+   <script src="assets/js/header.js"></script>
+   <script src="assets/js/bloklink.js"></script>
+   <script src="assets/js/username.js"></script>
+
+   <style>
+      body {
+         overflow-x: hidden;
+         background: black;
+         position: fixed;
+         top: 0;
+         left: 0;
+      }
+   </style>
+</head>
+
+<!-- Color mode HSL(hue, saturation, lightness)*/
+        --black-color: hsl(220, 24%, 12%);
+        --black-color-light: hsl(220, 24%, 15%);
+        --black-color-lighten: hsl(220, 20%, 18%);
+        --white-color: #fff;
+        --body-color: hsl(220, 100%, 97%); -->
+
+<body>
+   <script>
+      document.addEventListener('DOMContentLoaded', function () {
+         tampilkanPesanSelamat();
+      });
+   </script>
+
+   <div class="question-container">
+      <div class="question-box">
+         <h2>Let's test your knowledge in astronomy!</h2>
+         <p id="question"></p>
+
+         <div id="options" class="options"></div>
+
+         <button class="prevBtn" id="prevBtn">Previous</button>
+         <a id="exitBtn" href="index.html" class="exit-button">Exit</a>
+
+         <button class="nextBtn" id="nextBtn">Next</button>
+         <p id="result"></p>
+      </div>
+   </div>
+
+   <div class="contact">
+      <a title="User Guide" href="userguide.html"><img width="50px" src="assets/Element/userguide.png"></img></a>
+   </div>
+
+   <script src="/quiz/quiz_easy.js"></script>
+</body>
+
+</html>

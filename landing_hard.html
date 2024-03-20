@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Page Quiz (Hard)</title>
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/background-stars.css">
+    <link rel="stylesheet" href="quiz/landing.css">
+
+    <!--=============== EFFECT STARS ===============-->
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
+
+    <!-- CALLING HEADER BAR FROM JAVASCRIPT -->
+    <script src="assets/js/header.js"></script>
+    <script src="assets/js/bloklink.js"></script>
+    <script src="assets/js/username.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow-x: hidden;
+            background: black;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            tampilkanPesanSelamat();
+        });
+    </script>
+
+    <div class="container_landing">
+        <div class="card">
+            <h1>Welcome to Online Quiz !</h1>
+            <p>Ready to test your knowledge?</p>
+            <p>Level = Hard</p>
+            <button onclick="mulaiQuiz()">Mulai Quiz</button>
+        </div>
+    </div>
+
+    <script>
+        function mulaiQuiz() {
+            window.location.href = "quiz_hard.html";
+        }
+    </script>
+
+    <div class="contact">
+        <a title="User Guide" href="userguide.html"><img width="50px" src="assets/Element/userguide.png"></img></a>
+    </div>
+</body>
+
+</html>

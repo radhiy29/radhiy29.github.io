@@ -1,0 +1,75 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Astronomy Forum</title>
+
+   <!--=============== CSS ===============-->
+   <link rel="stylesheet" href="assets/css/styles.css">
+   <link rel="stylesheet" href="assets/css/background-stars.css">
+   <link rel="stylesheet" href="forum/forum.css">
+
+   <!--=============== EFFECT STARS ===============-->
+   <div id='stars'></div>
+   <div id='stars2'></div>
+   <div id='stars3'></div>
+
+   <!-- CALLING HEADER BAR FROM JAVASCRIPT -->
+   <script src="assets/js/header.js"></script>
+   <script src="assets/js/bloklink.js"></script>
+   <script src="assets/js/username.js"></script>
+
+   <style>
+      * {
+         margin: 0;
+         padding: 0;
+      }
+
+      body {
+         overflow-x: hidden;
+         background: black;
+      }
+   </style>
+</head>
+
+<body>
+   <script>
+      document.addEventListener('DOMContentLoaded', function () {
+         tampilkanPesanSelamat();
+      });
+   </script>
+
+   <div class="forum-container">
+      <div class="forum-title">Astronomy Forum</div>
+
+      <div class="question-form">
+         <textarea class="question-input" id="questionInput" placeholder="Your question..."></textarea>
+         <button class="submit-btn" onclick="submitQuestion()">Submit Question</button>
+      </div>
+
+      <div class="question-list" id="questionList">
+         <!-- Pertanyaan akan ditambahkan di sini menggunakan JavaScript -->
+      </div>
+
+      <div class="question-item">
+         <div class="question-content"></div>
+         <div class="comment-section">
+            <textarea class="comment-input" placeholder="Your comment..."></textarea>
+            <button class="submit-comment-btn" onclick="submitComment(this)">Add Comment</button>
+            <div class="comment-list"></div>
+         </div>
+      </div>
+   </div>
+
+   <div class="contact">
+      <a title="User Guide" href="userguide.html"><img width="50px" src="assets/Element/userguide.png"></img></a>
+   </div>
+
+   <script src="forum/forum.js"></script>
+</body>
+
+</html>

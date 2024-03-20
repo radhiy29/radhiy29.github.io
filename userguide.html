@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Guides</title>
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/background-stars.css">
+
+    <!--=============== EFFECT STARS ===============-->
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
+
+    <!-- CALLING HEADER BAR FROM JAVASCRIPT -->
+    <script src="assets/js/header.js"></script>
+    <script src="assets/js/bloklink.js"></script>
+    <script src="assets/js/username.js"></script>
+
+    <style>
+        .contact2 {
+            position: fixed;
+            bottom: 15px;
+            right: 70px;
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+        }
+
+        body {
+            background: black;
+            overflow-x: hidden;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+
+        .judul {
+            display: flex;
+            justify-content: center;
+            color: wheat;
+            font-size: 30px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .subjudul {
+            color: #fefe;
+            margin-top: 15px;
+            font-size: 18px;
+        }
+
+        .deskripsi {
+            display: flex;
+            color: #ffff;
+            font-size: 14px;
+        }
+
+        .ul {
+            display: flex;
+            margin-left: 20px;
+            flex-direction: column;
+            list-style-type: disc;
+            color: #ffff;
+            font-size: 14px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            tampilkanPesanSelamat();
+        });
+    </script>
+
+    <div style="margin-top: 50px; padding: 40px;">
+        <h1 class="judul">PANDUAN PENGGUNAAN WEBSITE ASTROVERSE</h1>
+
+        <h2 class="subjudul">BERANDA</h2>
+        <p class="deskripsi">Saat pengguna mengunjungi beranda website, mereka akan disambut dengan
+            artikel yang menarik dan upcoming event astronomi / peristiwa astronomi yang akan
+            terjadi dalam waktu dekat. Pengguna dapat menavigasi ke berbagai bagian website
+            dari sini.</p>
+
+        <h2 class="subjudul">SEARCH</h2>
+        <p class="deskripsi">Fitur pencarian memungkinkan pengguna untuk mencari informasi tertentu di
+            seluruh website. <br> Panduan pengguna :</p>
+        <ul class="ul">
+            <li>Klik kotak pencarian di bagian atas halaman.</li>
+            <li>Masukkan kata kunci atau frasa yang ingin Anda cari. Lalu tekan "Enter".</li>
+        </ul>
+
+        <h2 class="subjudul">QUIZ</h2>
+        <p class="deskripsi">Bagian "Quiz Online" menyediakan kuis singkat yang menguji pengetahuan
+            pengguna tentang astronomi. <br> Panduan pengguna :</p>
+        <ul class="ul">
+            <li>Klik "Quiz Online" di menu utama.</li>
+            <li>Pilih kuis yang ingin Anda ikuti.</li>
+            <li>Jawab pertanyaan dengan benar dan cek hasil Anda.</li>
+        </ul>
+
+        <h2 class="subjudul">GALLERY</h2>
+        <p class="deskripsi">Berisi gambar-gambar menakjubkan dari benda-benda langit, teleskop, dan
+            objek-objek luar angkasa. <br> Panduan pengguna :</p>
+        <ul class="ul">
+            <li>Klik "Gallery Foto" di menu utama.</li>
+            <li>Klik pada gambar untuk melihatnya dalam tampilan yang lebih besar.</li>
+        </ul>
+
+        <h2 class="subjudul">FORUM DISKUSI</h2>
+        <p class="deskripsi">Bagian "Forum Diskusi" memungkinkan pengguna berpartisipasi dalam percakapan
+            tentang astronomi, bertanya pertanyaan, dan berbagi pengalaman. <br> Panduan pengguna :</p>
+        <ul class="ul">
+            <li>Klik "Forum Diskusi" di menu utama.</li>
+            <li>Daftar atau masuk jika Anda belum memiliki akun.</li>
+            <li>Telusuri berbagai topik dan ikuti percakapan yang menarik.</li>
+        </ul>
+
+        <h2 class="subjudul">POTD</h2>
+        <p class="deskripsi">Setiap hari, "Photo of the Day" menampilkan gambar astronomi spektakuler.
+            <br> Panduan pengguna :
+        </p>
+        <ul class="ul">
+            <li>Klik "Photo of the Day" di menu utama.</li>
+            <li>Baca deskripsi gambar dan informasi terkait.</li>
+        </ul>
+
+        <div class="contact">
+            <a title="User Guide" href="userguide.html"><img width="50px" src="assets/Element/userguide.png"></img></a>
+        </div>
+
+        <div class="contact2">
+            <a title="Contact Us" href="mailto:astroverse.site@gmail.com"><img width="50px"
+                    src="assets/Element/contactus.png"></img></a>
+        </div>
+    </div>
+
+    <!--============== MENU FOR MOBILE DEVICES JS ===============-->
+    <!-- <script src="assets/js/main.js"></script> -->
+</body>
+
+</html>

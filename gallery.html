@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/background-stars.css">
+
+    <!--=============== EFFECT STARS ===============-->
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
+
+    <!-- CALLING HEADER BAR FROM JAVASCRIPT -->
+    <script src="assets/js/header.js"></script>
+    <script src="assets/js/bloklink.js"></script>
+    <script src="assets/js/username.js"></script>
+
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Basic&family=Poppins&display=swap");
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow-x: hidden;
+            background: black;
+            font-family: Poppins;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 125px;
+            padding-bottom: 50px;
+            margin-top: 60px;
+            margin-left: 90px;
+            gap: 40px;
+            scale: 1.40;
+        }
+
+        .card {
+            border: 2px solid #000000;
+            position: relative;
+            width: 140px;
+            height: 160px;
+            border-radius: 8px;
+            transition: 1000ms all;
+            transform-origin: center left;
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.5);
+            outline: 1px solid var(--background);
+            overflow: hidden;
+        }
+
+        .card img {
+            height: 160px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .card:hover {
+            cursor: pointer;
+            transform: scale(1.2);
+            box-shadow: 0 0 20px #00fffc;
+            margin: 5px;
+        }
+
+        .card:hover figcaption {
+            font-size: 0.6rem;
+            position: absolute;
+            height: 80px;
+            width: 160px;
+            display: flex;
+            align-items: end;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+            color: white;
+            left: 0;
+            bottom: 0;
+            padding-left: 12px;
+            padding-bottom: 10px;
+        }
+
+        .card:hover~.card {
+            font-weight: bold;
+            cursor: pointer;
+            transform: translateX(22px);
+        }
+
+        .download-btn-img {
+            transform: scale(0.1);
+            opacity: 0;
+            transition: 1000ms all;
+            border-radius: 8px;
+            transform-origin: center right;
+        }
+
+        .card:hover .download-btn-img {
+            position: absolute;
+            opacity: 1;
+            top: -18px;
+            right: 35px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            tampilkanPesanSelamat();
+        });
+    </script>
+
+    <div class="gallery"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            tampilkanPesanSelamat();
+
+            // Data gambar dan judul
+            const data = [
+                { src: 'assets\\Photo\\Eclipse.jpg', alt: 'Eclipse', download: 'Eclipse.jpg' },
+                { src: 'assets\\Photo\\orion_nebula.jpg', alt: 'Orion Nebula', download: 'orion_nebula.jpg' },
+                { src: 'assets\\Photo\\bg2.jpg', alt: 'Earth', download: 'bg2.jpg' },
+                { src: 'assets\\Photo\\Stars.jpg', alt: 'Stars', download: 'Stars.jpg' },
+                { src: 'assets\\Photo\\star_trails.jpg', alt: 'Stars Trail', download: 'star_trails.jpg' },
+                { src: 'assets\\Photo\\Aurora.jpg', alt: 'Aurora', download: 'Aurora.jpg' },
+                { src: 'assets\\Photo\\Moon.jpg', alt: 'Moon', download: 'Moon.jpg' },
+                { src: 'assets\\Photo\\WormHole.jpg', alt: 'WormHole', download: 'WormHole.jpg' },
+                { src: 'assets\\Photo\\Neptune.jpg', alt: 'Neptune', download: 'Neptune.jpg' }
+            ];
+
+            // Ambil elemen gallery
+            const gallery = document.querySelector('.gallery');
+
+            // Loop untuk membuat kartu dan menambahkannya ke galeri
+            data.forEach(item => {
+                const card = document.createElement('article');
+                card.className = 'card';
+
+                const figure = document.createElement('figure');
+
+                const img = document.createElement('img');
+                img.src = item.src;
+                img.alt = item.alt;
+
+                const figcaption = document.createElement('figcaption');
+                const h3 = document.createElement('h3');
+                h3.textContent = item.alt;
+
+                const downloadLink = document.createElement('a');
+                downloadLink.href = item.src;
+                downloadLink.download = item.download;
+
+                const downloadImg = document.createElement('img');
+                downloadImg.className = 'download-btn-img';
+                downloadImg.src = 'assets/element/download.png';
+
+                // Susun elemen-elemen
+                downloadLink.appendChild(downloadImg);
+                figcaption.appendChild(h3);
+                figcaption.appendChild(downloadLink);
+                figure.appendChild(img);
+                figure.appendChild(figcaption);
+                card.appendChild(figure);
+
+                // Tambahkan kartu ke galeri
+                gallery.appendChild(card);
+            });
+        });
+    </script>
+
+    <div class="contact">
+        <a title="User Guide" href="userguide.html">
+            <img width="50px" src="assets/Element/userguide.png"></img>
+        </a>
+    </div>
+
+    <script>
+        // JavaScript function to handle the download
+        function downloadImage(imageSrc, imageName) {
+            var link = document.createElement('a');
+            link.href = imageSrc;
+            link.download = imageName;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+
+    <!--============== MENU FOR MOBILE DEVICES JS ===============-->
+    <!-- <script src="assets/js/main.js"></script> -->
+</body>
+
+</html>

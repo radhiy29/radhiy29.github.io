@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Videos</title>
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/background-stars.css">
+
+    <!--=============== EFFECT STARS ===============-->
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
+
+    <!-- CALLING HEADER BAR FROM JAVASCRIPT -->
+    <script src="assets/js/header.js"></script>
+    <script src="assets/js/bloklink.js"></script>
+    <script src="assets/js/username.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            overflow-x: hidden;
+            background: black;
+            height: 100vh;
+            padding: 50px;
+        }
+
+        .video {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 60px;
+            margin-right: 40px;
+            gap: 50px;
+            scale: 1;
+        }
+
+        .card {
+            border: 2px solid #000000;
+            position: relative;
+            width: 1920px;
+            height: 1080px;
+            border-radius: 8px;
+            transition: 1000ms all;
+            transform-origin: center left;
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.5);
+            outline: 1px solid var(--background);
+            overflow: hidden;
+        }
+
+        .card iframe {
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .card:hover {
+            cursor: pointer;
+            transform: scale(1.10);
+            box-shadow: 0 0 60px #4D4DFF;
+            margin: 5px;
+        }
+
+        .card:hover~.card {
+            font-weight: bold;
+            cursor: pointer;
+            transform: translateX(22px);
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            tampilkanPesanSelamat();
+        });
+    </script>
+
+    <div class="video"></div>
+
+    <script>
+        const scale = 4.5;
+        const width = 1920 / scale;
+        const height = 1080 / scale;
+        const video = document.querySelector('.video');
+        const videoLink = [
+            "https://www.youtube.com/embed/apCIHrIAtU4?si=m9UcEGj-FP2DG3iH",
+            "https://www.youtube.com/embed/EdoKMQ7SEbc?si=EBgG5p2XG6cBKdaV",
+            "https://www.youtube.com/embed/uD4izuDMUQA?si=9DCddrHR2gpihXfL",
+            "https://www.youtube.com/embed/OeYnV9zp7Dk?si=b66l1KYVOrzx-Fj5",
+            "https://www.youtube.com/embed/PC3_TFiwyoc?si=VO2GLSs_mJiS7JDF",
+            "https://www.youtube.com/embed/N9qZFD1NkhI?si=ePUH2TSbTxhlm5k5",
+            "https://www.youtube.com/embed/eUHC4XYtQVE?si=Gf1XXrgm2m06WyoJ",
+            "https://www.youtube.com/embed/uzkD5SeuwzM?si=BJg7icX1uJcOC-JM",
+            "https://www.youtube.com/embed/UJwkj82BJjo?si=t5yzANyaI0TE123g",
+            "https://www.youtube.com/embed/YIXy2Kit4z4?si=SU_t7KLzBHAyhub8",
+            "https://www.youtube.com/embed/rM-4ocneCEc?si=2r8z2vAXr7d3So8-",
+            "https://www.youtube.com/embed/KtoefCOBcgg?si=P1vpWqUIqBEaxCda"
+        ]
+
+        for (var i = 0; i < videoLink.length; i++) {
+            const article = document.createElement("article");
+            article
+                .classList
+                .add("card");
+            article.style.width = width + "px";
+            article.style.height = height + "px";
+            const figure = document.createElement("figure");
+            const iframe = document.createElement("iframe");
+
+            iframe.width = width + "";
+            iframe.height = height + "";
+            iframe.src = videoLink[i];
+            iframe.title = "Youtube video player";
+            iframe.frameborder = "0";
+            iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-" +
+                "in-picture; web-share";
+            iframe.allowfullscreen = "allowfullscreen";
+            iframe.style.border = "none"
+
+            figure.appendChild(iframe);
+            article.appendChild(figure);
+            video.appendChild(article);
+        }
+    </script>
+
+    <div class="contact">
+        <a title="User Guide" href="userguide.html">
+            <img width="50px" src="assets/Element/userguide.png" alt="pntk"></img>
+        </a>
+    </div>
+
+    <!--============== MENU FOR MOBILE DEVICES JS ===============-->
+    <!-- <script src="assets/js/main.js"></script> -->
+</body>
+
+</html>
